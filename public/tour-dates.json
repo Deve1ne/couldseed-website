@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2024-07-10",
+    "city": "Paris",
+    "venue": "Olympia"
+  },
+  {
+    "date": "2024-07-15",
+    "city": "Lyon",
+    "venue": "Halle Tony Garnier"
+  },
+  {
+    "date": "2024-07-20",
+    "city": "Marseille",
+    "venue": "Le Dôme"
+  }
+]
