@@ -39,6 +39,9 @@ testem.log
 /typings
 __screenshots__/
 
+# Ignore all files and subfolders in the .vs directory
+.vs/
+
 # System files
 .DS_Store
 Thumbs.db
