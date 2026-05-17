@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
           <h2 class="section-title text-xl font-semibold mb-2">Section Pro (FR)</h2>
           <p class="mb-4">Vous pouvez télécharger l'EPK (Electronic Press Kit) et le rider technique du groupe en utilisant les liens ci-dessous :</p>
           <ul class="list-disc list-inside mb-2">
-            <li><a href="#" class="text-green-700 underline hover:text-green-900">Télécharger l'EPK</a></li>
+            <li><a href="EPK_CS.pdf" class="text-green-700 underline hover:text-green-900">Télécharger l'EPK</a></li>
             <li><a href="COULD_SEED_TECHNICAL_RIDER_FR.pdf" download class="text-green-700 underline hover:text-green-900">Télécharger le rider</a></li>
           </ul>
         </div>
@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
           <h2 class="section-title text-xl font-semibold mb-2">Pro Section (EN)</h2>
           <p class="mb-4">You can download Could Seed's EPK (Electronic Press Kit) and technical rider using the links below:</p>
           <ul class="list-disc list-inside mb-2">
-            <li><a href="#" class="text-green-700 underline hover:text-green-900">Download EPK</a></li>
+            <li><a href="EPK_CS.pdf" class="text-green-700 underline hover:text-green-900">Download EPK</a></li>
             <li><a href="COULD_SEED_TECHNICAL_RIDER_ENG.pdf" download class="text-green-700 underline hover:text-green-900">Download rider</a></li>
           </ul>
         </div>
