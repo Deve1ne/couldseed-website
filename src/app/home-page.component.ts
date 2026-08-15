@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { HeroComponent } from './hero.component';
 import { AlbumHighlightComponent } from './album-highlight.component';
 import { TourDatesComponent } from './tour-dates.component';
@@ -12,6 +13,7 @@ import { ContactComponent } from './contact.component';
   selector: 'app-home-page',
   standalone: true,
   imports: [
+    RouterLink,
     HeroComponent,
     AlbumHighlightComponent,
     TourDatesComponent,
@@ -22,6 +24,7 @@ import { ContactComponent } from './contact.component';
     ContactComponent
   ],
   template: `
+    <a routerLink="/pro" class="fixed top-4 right-4 z-50 text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Pro</a>
     <app-hero />
     <app-album-highlight />
     <app-tour-dates />
