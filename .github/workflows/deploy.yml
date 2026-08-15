@@ -1,0 +1,84 @@
+name: Déploiement FTP
+
+# Se déclenche à chaque push sur "main" (le dépôt n'a pas de branche "master").
+on:
+  push:
+    branches:
+      - main
+
+# Permissions minimales : le job n'a besoin que de lire le code.
+permissions:
+  contents: read
+
+env:
+  # Adresse d'alerte : pas une donnée sensible, simple variable modifiable ici.
+  ALERT_EMAIL: couldseed@mailo.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Build de production
+        run: npx ng build --configuration production
+
+      # Déploiement FTP : synchronisation incrémentale (upload des fichiers
+      # nouveaux/modifiés, suppression des anciens fichiers déployés qui
+      # n'existent plus dans le build). On n'utilise volontairement PAS
+      # "dangerous-clean-slate" : cette option supprime tout le contenu du
+      # serveur AVANT le dépôt, y compris les fichiers listés dans "exclude" —
+      # elle rendrait donc la protection des fichiers Apache ci-dessous inutile.
+      - name: Déploiement sur le serveur FTP
+        id: ftp-deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/untitled/browser/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          # Protection des fichiers/dossiers qui servent habituellement à Apache :
+          # - règle générale : ne jamais toucher aux fichiers/dossiers cachés
+          #   (dotfiles), qui couvrent .htaccess, .htpasswd, .well-known/ (Let's Encrypt), etc.
+          # - renfort explicite au cas où l'un de ces éléments ne serait pas
+          #   un dotfile sur ce serveur précis (ex. cgi-bin/, error/).
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.*
+            **/.*/**
+            **/cgi-bin/**
+            **/error/**
+
+      # Toujours exécuté (succès ou échec), pour alerter par email dans les deux cas.
+      - name: Alerte email (succès ou échec)
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ vars.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Could Seed] Déploiement ${{ job.status }} (${{ github.sha }})"
+          to: ${{ env.ALERT_EMAIL }}
+          from: "Could Seed CI <${{ env.ALERT_EMAIL }}>"
+          body: |
+            Statut du déploiement : ${{ job.status }}
+            Dépôt : ${{ github.repository }}
+            Branche : ${{ github.ref_name }}
+            Commit : ${{ github.sha }}
+            Déclenché par : ${{ github.actor }}
+            Détails : ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
