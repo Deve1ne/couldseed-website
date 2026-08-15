@@ -1,17 +1,212 @@
 [
   {
-    "date": "2024-07-10",
-    "city": "Paris",
-    "venue": "Olympia"
+    "date": "2022-01-07",
+    "venue": "RKK",
+    "city": "Karlsruhe (DE)"
   },
   {
-    "date": "2024-07-15",
-    "city": "Lyon",
-    "venue": "Halle Tony Garnier"
+    "date": "2022-04-05",
+    "venue": "El Camino",
+    "city": "Caen (FR)"
   },
   {
-    "date": "2024-07-20",
-    "city": "Marseille",
-    "venue": "Le Dôme"
+    "date": "2022-04-06",
+    "venue": "Le BM",
+    "city": "Tournai (BE)"
+  },
+  {
+    "date": "2022-04-08",
+    "venue": "Kviturhrus BO",
+    "city": "Asendore (DE)"
+  },
+  {
+    "date": "2022-04-09",
+    "venue": "Rhine Entertainment S.W.",
+    "city": "Oven (DE)"
+  },
+  {
+    "date": "2022-06-15",
+    "venue": "Festival du Monde de Lams",
+    "city": "Almon (FR)"
+  },
+  {
+    "date": "2022-09-15",
+    "venue": "Canadian Cafe",
+    "city": "Tours (FR)"
+  },
+  {
+    "date": "2022-09-16",
+    "venue": "Le Lézard",
+    "city": "Le Mans (FR)"
+  },
+  {
+    "date": "2022-09-17",
+    "venue": "TBA",
+    "city": "Tours (FR)"
+  },
+  {
+    "date": "2022-10-17",
+    "venue": "Garage 5",
+    "city": "Le Mans (FR)"
+  },
+  {
+    "date": "2022-11-07",
+    "venue": "Little Atlantique Brewery",
+    "city": "Nantes (FR)"
+  },
+  {
+    "date": "2022-11-17",
+    "venue": "Le Dropkick Bar",
+    "city": "Orléans (FR)"
+  },
+  {
+    "date": "2022-11-18",
+    "venue": "Le Chaniee",
+    "city": "Metz (FR)"
+  },
+  {
+    "date": "2022-11-19",
+    "venue": "Taverne Elektrik",
+    "city": "Amiens (FR)"
+  },
+  {
+    "date": "2023-10-12",
+    "venue": "La Salle Gueule",
+    "city": "Marseille (FR)"
+  },
+  {
+    "date": "2023-10-21",
+    "venue": "Le Farmer",
+    "city": "Law (FR)"
+  },
+  {
+    "date": "2023-10-24",
+    "venue": "Bonberenea Sound",
+    "city": "Tolosa (ES)"
+  },
+  {
+    "date": "2023-10-25",
+    "venue": "El Perro",
+    "city": "Madrid (ES)"
+  },
+  {
+    "date": "2023-10-26",
+    "venue": "Disgraia Concert Hall",
+    "city": "Lisboa (PT)"
+  },
+  {
+    "date": "2023-10-27",
+    "venue": "The Rincon No",
+    "city": "Don Benito (ES)"
+  },
+  {
+    "date": "2023-10-28",
+    "venue": "Barracuda Cube De Roque",
+    "city": "Porto (PT)"
+  },
+  {
+    "date": "2023-10-29",
+    "venue": "Stall",
+    "city": "Santa (ES)"
+  },
+  {
+    "date": "2023-10-31",
+    "venue": "Heaven & Hell",
+    "city": "Ribeira (ES)"
+  },
+  {
+    "date": "2023-11-01",
+    "venue": "Black Bourbon",
+    "city": "León (ES)"
+  },
+  {
+    "date": "2023-11-02",
+    "venue": "Rock Beer",
+    "city": "Santander (ES)"
+  },
+  {
+    "date": "2023-11-03",
+    "venue": "Celtic Pub",
+    "city": "Tarbes (FR)"
+  },
+  {
+    "date": "2024-01-18",
+    "venue": "Brasserie Septante-Deux",
+    "city": "Le Mans (FR)"
+  },
+  {
+    "date": "2024-01-19",
+    "venue": "Le Melody Maker",
+    "city": "Rennes (FR)"
+  },
+  {
+    "date": "2024-01-20",
+    "venue": "Poom Poom Tchack",
+    "city": "Nantes (FR)"
+  },
+  {
+    "date": "2024-07-27",
+    "venue": "Rhine Festival",
+    "city": "Xanten (DE)"
+  },
+  {
+    "date": "2024-11-09",
+    "venue": "Brasseries Mage Malte",
+    "city": "Mamers (FR)"
+  },
+  {
+    "date": "2024-11-14",
+    "venue": "Oxford Pub",
+    "city": "Tours (FR)"
+  },
+  {
+    "date": "2025-01-17",
+    "venue": "BB'O",
+    "city": "Nantes (FR)"
+  },
+  {
+    "date": "2025-01-18",
+    "venue": "Brasserie Septante-Deux",
+    "city": "Le Mans (FR)"
+  },
+  {
+    "date": "2025-01-22",
+    "venue": "13 Peaces Muzik'Club",
+    "city": "Rouen (FR)"
+  },
+  {
+    "date": "2025-01-23",
+    "venue": "Au Bout de Nos Rives",
+    "city": "Tournai (BE)"
+  },
+  {
+    "date": "2025-01-24",
+    "venue": "Radhaus",
+    "city": "Kleve (DE)"
+  },
+  {
+    "date": "2025-01-25",
+    "venue": "Innocent",
+    "city": "Hengelo (NL)"
+  },
+  {
+    "date": "2025-01-26",
+    "venue": "Secret Show",
+    "city": "Xanten (DE)"
+  },
+  {
+    "date": "2025-01-30",
+    "venue": "Feierwerk Sunny Red",
+    "city": "Munich (DE)"
+  },
+  {
+    "date": "2025-01-31",
+    "venue": "P8",
+    "city": "Karlsruhe (DE)"
+  },
+  {
+    "date": "2025-02-01",
+    "venue": "Le Charleston",
+    "city": "Amiens (FR)"
   }
 ]
