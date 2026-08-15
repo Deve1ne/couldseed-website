@@ -17,6 +17,7 @@ import { RouterLink } from '@angular/router';
             <li><a href="EPK_CS.pdf" class="text-green-700 underline hover:text-green-900">Télécharger l'EPK</a></li>
             <li><a href="COULD_SEED_TECHNICAL_RIDER_FR.pdf" download class="text-green-700 underline hover:text-green-900">Télécharger le rider</a></li>
             <li><a href="Selection_HD.zip" download class="text-green-700 underline hover:text-green-900">Télécharger les photos</a></li>
+            <li><a href="logos_could_seed.zip" download class="text-green-700 underline hover:text-green-900">Télécharger les logos</a></li>
           </ul>
         </div>
         <div class="w-full bg-gray-50 rounded-xl px-6 py-6 shadow">
@@ -26,6 +27,7 @@ import { RouterLink } from '@angular/router';
             <li><a href="EPK_CS.pdf" class="text-green-700 underline hover:text-green-900">Download EPK</a></li>
             <li><a href="COULD_SEED_TECHNICAL_RIDER_ENG.pdf" download class="text-green-700 underline hover:text-green-900">Download rider</a></li>
             <li><a href="Selection_HD.zip" download class="text-green-700 underline hover:text-green-900">Download photos</a></li>
+            <li><a href="logos_could_seed.zip" download class="text-green-700 underline hover:text-green-900">Download logos</a></li>
           </ul>
         </div>
       </div>
