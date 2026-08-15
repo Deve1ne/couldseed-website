@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule, DatePipe } from '@angular/common';
 
@@ -16,8 +16,8 @@ interface TourDate {
     <section id="tour" class="w-full bg-white text-gray-800 px-4 py-6 md:py-10 flex flex-col items-center transition-all">
       <div class="w-full max-w-2xl">
         <h2 class="section-title text-2xl md:text-3xl font-bold mb-4 text-center" style="font-family: 'Poppins', 'Inter', sans-serif;">Dates de tournée</h2>
-        <ul class="flex flex-col gap-3" *ngIf="upcomingDates.length > 0; else noDates">
-          <li *ngFor="let tour of upcomingDates" class="flex flex-col md:flex-row md:justify-between md:items-center bg-gray-50 rounded-xl px-6 py-4 shadow animate-fade-in">
+        <ul class="flex flex-col gap-3" *ngIf="upcomingDates().length > 0; else noDates">
+          <li *ngFor="let tour of upcomingDates()" class="flex flex-col md:flex-row md:justify-between md:items-center bg-gray-50 rounded-xl px-6 py-4 shadow animate-fade-in">
             <span class="font-semibold text-lg text-gray-700">{{ tour.date | date: 'longDate' }}</span>
             <span class="text-gray-500">{{ tour.city }} – {{ tour.venue }}</span>
           </li>
@@ -42,20 +42,21 @@ interface TourDate {
   `]
 })
 export class TourDatesComponent implements OnInit {
-  tourDates: TourDate[] = [];
-  upcomingDates: TourDate[] = [];
+  upcomingDates = signal<TourDate[]>([]);
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<TourDate[]>('tour-dates.json').subscribe(data => {
-      this.tourDates = data;
-      const today = new Date();
-      this.upcomingDates = this.tourDates.filter(tour => {
-        const date = new Date(tour.date);
-        // Garde les dates aujourd'hui ou dans le futur
-        return date >= new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      });
+    this.http.get<TourDate[]>('tour-dates.json').subscribe({
+      next: data => {
+        const today = new Date();
+        this.upcomingDates.set(data.filter(tour => {
+          const date = new Date(tour.date);
+          // Garde les dates aujourd'hui ou dans le futur
+          return date >= new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        }));
+      },
+      error: err => console.error('Impossible de charger tour-dates.json', err)
     });
   }
 }

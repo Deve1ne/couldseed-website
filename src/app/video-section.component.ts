@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -17,7 +17,7 @@ interface Video {
       <div class="w-full flex flex-col items-center">
         <h2 class="section-title text-2xl md:text-3xl font-bold mb-8 text-center" style="font-family: 'Poppins', 'Inter', sans-serif;">Vidéos</h2>
         <div class="w-full">
-          <ng-container *ngFor="let video of videos">
+          <ng-container *ngFor="let video of videos()">
             <div class="w-full h-screen flex items-center justify-center mb-8 px-[10vw]">
               <iframe
                 class="w-full h-full rounded-none"
@@ -40,13 +40,14 @@ interface Video {
   `]
 })
 export class VideoSectionComponent implements OnInit {
-  videos: Video[] = [];
+  videos = signal<Video[]>([]);
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<Video[]>('videos.json').subscribe(data => {
-      this.videos = data;
+    this.http.get<Video[]>('videos.json').subscribe({
+      next: data => this.videos.set(data),
+      error: err => console.error('Impossible de charger videos.json', err)
     });
   }
 }
