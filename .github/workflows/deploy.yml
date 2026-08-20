@@ -54,6 +54,10 @@ jobs:
           #   (dotfiles), qui couvrent .htaccess, .htpasswd, .well-known/ (Let's Encrypt), etc.
           # - renfort explicite au cas où l'un de ces éléments ne serait pas
           #   un dotfile sur ce serveur précis (ex. cgi-bin/, error/).
+          # - /shop : boutique WooCommerce auto-hébergée, installée à la main
+          #   sur le serveur et absente du build Angular. Sans cette
+          #   exclusion, la synchro FTP supprimerait tout son contenu à
+          #   chaque déploiement.
           exclude: |
             **/.git*
             **/.git*/**
@@ -62,6 +66,7 @@ jobs:
             **/.*/**
             **/cgi-bin/**
             **/error/**
+            **/shop/**
 
       # Toujours exécuté (succès ou échec), pour alerter par email dans les deux cas.
       - name: Alerte email (succès ou échec)
