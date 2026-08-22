@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <div class="fixed top-4 right-4 z-50 flex flex-row gap-2">
-      <a routerLink="/shop" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Shop</a>
+      <a href="/shop/" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Shop</a>
       <a routerLink="/" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Accueil</a>
     </div>
     <section class="w-full min-h-screen bg-white text-gray-800 px-4 py-16 flex flex-col items-center transition-all">

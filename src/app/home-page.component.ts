@@ -25,7 +25,7 @@ import { ContactComponent } from './contact.component';
   ],
   template: `
     <div class="fixed top-4 right-4 z-50 flex flex-row gap-2">
-      <a routerLink="/shop" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Shop</a>
+      <a href="/shop/" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Shop</a>
       <a routerLink="/pro" class="text-green-700 font-medium underline hover:text-green-900 transition-colors bg-white/80 backdrop-blur px-3 py-1 rounded-full shadow">Pro</a>
     </div>
     <app-hero />
