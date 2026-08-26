@@ -12,7 +12,7 @@ permissions:
 
 env:
   # Adresse d'alerte : pas une donnée sensible, simple variable modifiable ici.
-  ALERT_EMAIL: couldseed@mailo.com
+  ALERT_EMAIL: dimitri.even@groolot.net
 
 jobs:
   build-and-deploy:
