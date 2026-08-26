@@ -13,6 +13,7 @@ permissions:
 env:
   # Adresse d'alerte : pas une donnée sensible, simple variable modifiable ici.
   ALERT_EMAIL: dimitri.even@groolot.net
+  ALERT_EMAIL_FROM: couldseed@mailo.com
 
 jobs:
   build-and-deploy:
@@ -79,7 +80,7 @@ jobs:
           password: ${{ secrets.SMTP_PASSWORD }}
           subject: "[Could Seed] Déploiement ${{ job.status }} (${{ github.sha }})"
           to: ${{ env.ALERT_EMAIL }}
-          from: "Could Seed CI <${{ env.ALERT_EMAIL }}>"
+          from: "Could Seed CI <${{ env.ALERT_EMAIL_FROM }}>"
           body: |
             Statut du déploiement : ${{ job.status }}
             Dépôt : ${{ github.repository }}
