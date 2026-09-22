@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <div class="w-full px-[10vw] mb-2 flex justify-center">
-      <h2 class="section-title text-2xl md:text-3xl font-bold text-center" style="font-family: 'Poppins', 'Inter', sans-serif;">New Single "Orions" Out Now !</h2>
+      <h2 class="section-title text-2xl md:text-3xl font-bold text-center" style="font-family: 'Poppins', 'Inter', sans-serif;">New Single "Orion" Out Now !</h2>
     </div>
     <section id="album" class="flex flex-col items-center justify-center w-full bg-white text-gray-800 px-[10vw] md:py-4 transition-all">
       <div class="w-full max-w-3xl flex flex-col items-center gap-4 md:gap-6">
